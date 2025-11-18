@@ -3,129 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Attractive Website</title>
+    <title>Elite Digital Solutions</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5968/5968267.png">
 
-    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- INTERNAL CSS -->
     <style>
-        body {
-            font-family: "Poppins", sans-serif;
-            background: #0d0d0d;
-            color: #fff;
-            overflow-x: hidden;
+        /* Define a consistent, professional color palette */
+        :root {
+            --primary-bg: #0d0d0d;
+            --secondary-bg: #151515;
+            --text-color: #fff;
+            --accent-color: #00bcd4; /* Vibrant Cyan/Teal */
+            --glow-color: rgba(0, 188, 212, 0.8);
+            --light-text: #adb5bd; /* white-50 equivalent */
         }
 
-        /* HERO */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navbar Enhancements */
+        .navbar {
+            background-color: var(--primary-bg) !important; /* Ensure dark background */
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            font-weight: 400;
+            color: var(--light-text) !important;
+            position: relative;
+        }
+        
+        /* Subtle Underline Hover Effect for Nav Links */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* HERO Section */
         .hero {
             height: 100vh;
-            background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=60')
-                center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            /* Added padding for small screens */
+            padding-top: 70px; 
         }
 
         .hero::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.65);
+            background: rgba(0,0,0,0.75); /* Darker overlay for better text contrast */
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
             text-align: center;
+            max-width: 800px;
+            padding: 20px;
             animation: fadeIn 1.8s ease-in-out;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive font size */
             font-weight: 700;
+            margin-bottom: 0.5rem;
         }
 
+        .hero p {
+            font-weight: 300;
+            color: var(--light-text);
+        }
+
+        /* Glow Button Refinement */
         .glow-btn {
-            padding: 12px 35px;
+            padding: 14px 40px;
             border-radius: 50px;
-            background: #007bff;
+            background: var(--accent-color);
             border: none;
             font-size: 1.1rem;
-            color: #fff;
-            margin-top: 20px;
-            box-shadow: 0px 0px 15px #007bff;
-            transition: 0.3s;
+            font-weight: 600;
+            color: var(--primary-bg); /* Dark text for contrast on accent color */
+            margin-top: 25px;
+            box-shadow: 0px 0px 20px var(--glow-color);
+            transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .glow-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 25px #007bff;
+            transform: scale(1.05);
+            background: #20e4ff;
+            box-shadow: 0px 0px 35px var(--glow-color);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(50px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* SERVICES */
+        /* SERVICES Section */
         #services {
-            padding: 80px 0;
+            padding: 100px 0; /* Increased padding */
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Underline for section headings */
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
         }
 
         .glass-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 35px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: 0.4s;
+            background: rgba(255,255,255,0.08); /* Slightly less opaque */
+            border-radius: 15px; /* Slightly smaller radius */
+            padding: 40px;
+            backdrop-filter: blur(12px); /* Slightly stronger blur */
+            border: 1px solid rgba(255,255,255,0.15); /* Subtler border */
+            transition: 0.5s ease-in-out;
+            height: 100%; /* Important for equal height columns */
         }
 
         .glass-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0px 0px 25px rgba(255,255,255,0.2);
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 30px rgba(0, 188, 212, 0.2); /* Accent-colored shadow */
+            border: 1px solid var(--accent-color); /* Highlight border on hover */
         }
 
         .glass-card i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: #00d0ff;
+            font-size: 3.5rem; /* Larger icon */
+            margin-bottom: 20px;
+            color: var(--accent-color);
         }
 
-        /* ABOUT */
-        #about {
-            padding: 80px 0;
-            background: #111;
+        .glass-card h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
         }
+        
+        .glass-card p {
+            color: var(--light-text);
+        }
+
+        /* ABOUT Section */
+        #about {
+            padding: 100px 0;
+            background: var(--secondary-bg); /* Darker background for contrast */
+        }
+        
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* CONTACT Section */
+        #contact {
+            padding: 80px 0;
+        }
+        
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
 
         /* FOOTER */
         footer {
-            background: #000;
-            padding: 20px;
+            background: #000000;
+            padding: 25px; /* Slightly more padding */
             text-align: center;
+            font-size: 0.9rem;
+            color: var(--light-text);
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top shadow-sm">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top shadow">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">MyBrand</a>
+            <a class="navbar-brand fw-bold" href="#">Elite Digital</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto gap-3">
+                <ul class="navbar-nav ms-auto gap-2 gap-lg-4">
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -134,76 +242,77 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Modern & Attractive Web Design</h1>
-            <p class="text-white-50 fs-5">Premium • Responsive • Professional</p>
-            <a href="#services"><button class="glow-btn">Get Started</button></a>
+            <h1>Elevate Your Brand with **Elite Web Solutions**</h1>
+            <p class="fs-5">Designing cutting-edge, responsive, and performance-driven websites for the modern era.</p>
+            <a href="#services"><button class="glow-btn">Start Your Project</button></a>
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="container text-center">
-        <h2 class="mb-5 fw-bold">My Services</h2>
-        <div class="row g-4">
+        <h2 class="section-heading">Core Services</h2>
+        <div class="row g-5 mt-4">
 
             <div class="col-md-4">
                 <div class="glass-card">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    <h4>Responsive Website</h4>
-                    <p>Mobile-friendly, fast, SEO-ready website built professionally.</p>
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h4>Fully Responsive Development</h4>
+                    <p>Deliver flawless user experiences on any device, ensuring compatibility and accessibility across all screen sizes.</p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="glass-card">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <h4>UI/UX Modern Design</h4>
-                    <p>Clean, modern user interface and beautiful visual structure.</p>
+                    <i class="fa-solid fa-palette"></i>
+                    <h4>Premium UI/UX Design</h4>
+                    <p>Crafting intuitive interfaces and visually stunning aesthetics that engage users and reflect your brand's identity.</p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="glass-card">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h4>Interactive JavaScript</h4>
-                    <p>Smooth animations, sliders, effects & dynamic JS features.</p>
+                    <i class="fa-solid fa-rocket"></i>
+                    <h4>High-Performance Optimization</h4>
+                    <p>Focus on speed and efficiency, implementing dynamic features and smooth interactions for superior performance.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="text-center">
         <div class="container">
-            <h2 class="fw-bold">About Me</h2>
-            <p class="mt-3 text-white-50">
-                I’m a professional front-end developer creating beautiful modern websites
-                using HTML, CSS, Bootstrap, JavaScript & more.
-            </p>
+            <h2 class="section-heading">My Expertise</h2>
+            <div class="about-content mt-5">
+                <p class="fs-5 mb-4">
+                    As a dedicated front-end specialist, I transform ideas into powerful digital realities. I focus on the intricate balance of **design fidelity**, **technical performance**, and **user engagement**.
+                </p>
+                <p class="text-white-50">
+                    My toolkit includes modern standards like HTML5, CSS3/Sass, Bootstrap, and advanced JavaScript frameworks, ensuring every project is scalable, maintainable, and future-proof.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="text-center py-5">
+    <section id="contact" class="text-center">
         <div class="container">
-            <h2 class="fw-bold">Contact Me</h2>
-            <p class="text-white-50"><i class="fa-solid fa-envelope"></i> yourmail@example.com</p>
+            <h2 class="section-heading">Get In Touch</h2>
+            <div class="contact-info mt-5">
+                <p class="text-white"><i class="fa-solid fa-envelope"></i> yourmail@elite.com</p>
+                <a href="mailto:yourmail@elite.com" class="glow-btn">Email Me Now</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        &copy; 2025 Modern Website | All Rights Reserved
+        <p>&copy; 2025 Elite Digital Solutions | Crafted with Precision</p>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- INTERNAL JS -->
     <script>
-        console.log("Website Loaded Successfully!");
+        console.log("Elite Digital Website Loaded Successfully!");
     </script>
 
 </body>
