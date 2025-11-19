@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Digital Solutions</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Portfolio</title>
 
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5968/5968267.png">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Define a consistent, professional color palette */
+        /* ===============================
+           GLOBAL STYLES
+        ================================ */
         :root {
-            --primary-bg: #0d0d0d;
-            --secondary-bg: #151515;
-            --text-color: #fff;
-            --accent-color: #00bcd4; /* Vibrant Cyan/Teal */
-            --glow-color: rgba(0, 188, 212, 0.8);
-            --light-text: #adb5bd; /* white-50 equivalent */
+            --primary-bg: #0b0b0d;
+            --secondary-bg: #131316;
+            --card-bg: rgba(255,255,255,0.05);
+            --text-color: #ffffff;
+            --light-text: #a6adb8;
+            --accent-color: #00eaff;
+            --accent-glow: rgba(0,255,240,0.5);
+            --border-glow: rgba(0,234,255,0.3);
+            --radius: 20px;
         }
 
         body {
@@ -29,211 +35,195 @@
             background: var(--primary-bg);
             color: var(--text-color);
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* Navbar Enhancements */
+        /* ===============================
+           NAVBAR
+        ================================ */
         .navbar {
-            background-color: var(--primary-bg) !important; /* Ensure dark background */
-            transition: all 0.3s ease;
-        }
-
-        .navbar-brand {
-            font-size: 1.6rem;
-            letter-spacing: 1px;
+            background: rgba(0,0,0,0.6) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .nav-link {
-            font-weight: 400;
             color: var(--light-text) !important;
+            margin: 0 8px;
             position: relative;
+            font-weight: 500;
         }
-        
-        /* Subtle Underline Hover Effect for Nav Links */
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
         .nav-link::after {
             content: '';
             position: absolute;
-            left: 0;
-            bottom: 5px;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
+            left: 0; bottom: 0;
+            width: 0; height: 2px;
+            background: var(--accent-color);
+            transition: .3s;
         }
-
         .nav-link:hover::after {
             width: 100%;
         }
 
-        /* HERO Section */
+        /* ===============================
+           HERO SECTION
+        ================================ */
         .hero {
             height: 100vh;
-            background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80')
+                center/cover no-repeat;
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            /* Added padding for small screens */
-            padding-top: 70px; 
+            text-align: center;
         }
 
         .hero::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.75); /* Darker overlay for better text contrast */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.6));
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
             max-width: 800px;
+            margin: auto;
             padding: 20px;
-            animation: fadeIn 1.8s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive font size */
+            font-size: clamp(2.6rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: 0.5rem;
         }
 
         .hero p {
-            font-weight: 300;
             color: var(--light-text);
+            font-size: 1.2rem;
+            margin-top: 15px;
         }
 
-        /* Glow Button Refinement */
         .glow-btn {
-            padding: 14px 40px;
-            border-radius: 50px;
-            background: var(--accent-color);
-            border: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-bg); /* Dark text for contrast on accent color */
             margin-top: 25px;
-            box-shadow: 0px 0px 20px var(--glow-color);
-            transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .glow-btn:hover {
-            transform: scale(1.05);
-            background: #20e4ff;
-            box-shadow: 0px 0px 35px var(--glow-color);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* SERVICES Section */
-        #services {
-            padding: 100px 0; /* Increased padding */
-        }
-
-        .section-heading {
-            font-size: 2.5rem;
+            padding: 14px 38px;
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            border-radius: 50px;
             font-weight: 600;
-            margin-bottom: 50px;
+            box-shadow: 0px 0px 25px var(--accent-glow);
+            transition: 0.35s;
+        }
+
+        .glow-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0px 0px 40px var(--accent-glow);
+        }
+
+        /* ===============================
+           SECTION HEADINGS
+        ================================ */
+        .section-heading {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 40px;
             position: relative;
             display: inline-block;
         }
 
-        /* Underline for section headings */
         .section-heading::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 60px;
+            content: "";
+            width: 70px;
             height: 3px;
             background: var(--accent-color);
-            border-radius: 2px;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 4px;
         }
 
+        /* ===============================
+           SERVICES
+        ================================ */
         .glass-card {
-            background: rgba(255,255,255,0.08); /* Slightly less opaque */
-            border-radius: 15px; /* Slightly smaller radius */
-            padding: 40px;
-            backdrop-filter: blur(12px); /* Slightly stronger blur */
-            border: 1px solid rgba(255,255,255,0.15); /* Subtler border */
-            transition: 0.5s ease-in-out;
-            height: 100%; /* Important for equal height columns */
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: var(--radius);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.4s;
         }
 
         .glass-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 10px 30px rgba(0, 188, 212, 0.2); /* Accent-colored shadow */
-            border: 1px solid var(--accent-color); /* Highlight border on hover */
+            transform: translateY(-12px);
+            border-color: var(--accent-color);
+            box-shadow: 0px 0px 25px var(--border-glow);
         }
 
         .glass-card i {
-            font-size: 3.5rem; /* Larger icon */
-            margin-bottom: 20px;
+            font-size: 3rem;
             color: var(--accent-color);
-        }
-
-        .glass-card h4 {
-            font-weight: 600;
             margin-bottom: 15px;
         }
-        
-        .glass-card p {
-            color: var(--light-text);
-        }
 
-        /* ABOUT Section */
+        /* ===============================
+           ABOUT SECTION
+        ================================ */
         #about {
-            padding: 100px 0;
-            background: var(--secondary-bg); /* Darker background for contrast */
-        }
-        
-        .about-content {
-            max-width: 700px;
-            margin: 0 auto;
+            background: var(--secondary-bg);
+            padding: 110px 0;
         }
 
-        /* CONTACT Section */
-        #contact {
-            padding: 80px 0;
-        }
-        
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-top: 15px;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--accent-color);
-        }
-
-
-        /* FOOTER */
-        footer {
-            background: #000000;
-            padding: 25px; /* Slightly more padding */
-            text-align: center;
-            font-size: 0.9rem;
+        #about p {
             color: var(--light-text);
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+
+        /* ===============================
+           CONTACT
+        ================================ */
+        .contact-info i {
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+        /* ===============================
+           FOOTER
+        ================================ */
+        footer {
+            background: #000;
+            padding: 25px;
+            color: var(--light-text);
+        }
+
+        /* ===============================
+           ANIMATIONS
+        ================================ */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top shadow">
+    <!-- ========================= NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Elite Digital</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <a class="navbar-brand fw-bold text-white" href="#">Portfolio</a>
+
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto gap-2 gap-lg-4">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -242,78 +232,76 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- ========================= HERO ========================= -->
+    <section id="hero" class="hero">
         <div class="hero-content">
-            <h1>Elevate Your Brand with **Elite Web Solutions**</h1>
-            <p class="fs-5">Designing cutting-edge, responsive, and performance-driven websites for the modern era.</p>
-            <a href="#services"><button class="glow-btn">Start Your Project</button></a>
+            <h1>Build Modern, Fast & Beautiful Websites</h1>
+            <p>I specialize in creating clean, modern UI/UX, responsive designs and full-featured web applications.</p>
+            <button class="glow-btn">Hire Me <i class="fa-solid fa-arrow-right ms-2"></i></button>
         </div>
     </section>
 
-    <section id="services" class="container text-center">
-        <h2 class="section-heading">Core Services</h2>
-        <div class="row g-5 mt-4">
-
-            <div class="col-md-4">
-                <div class="glass-card">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                    <h4>Fully Responsive Development</h4>
-                    <p>Deliver flawless user experiences on any device, ensuring compatibility and accessibility across all screen sizes.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="glass-card">
-                    <i class="fa-solid fa-palette"></i>
-                    <h4>Premium UI/UX Design</h4>
-                    <p>Crafting intuitive interfaces and visually stunning aesthetics that engage users and reflect your brand's identity.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="glass-card">
-                    <i class="fa-solid fa-rocket"></i>
-                    <h4>High-Performance Optimization</h4>
-                    <p>Focus on speed and efficiency, implementing dynamic features and smooth interactions for superior performance.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="about" class="text-center">
+    <!-- ========================= SERVICES ========================= -->
+    <section id="services" class="py-5 text-center">
         <div class="container">
-            <h2 class="section-heading">My Expertise</h2>
-            <div class="about-content mt-5">
-                <p class="fs-5 mb-4">
-                    As a dedicated front-end specialist, I transform ideas into powerful digital realities. I focus on the intricate balance of **design fidelity**, **technical performance**, and **user engagement**.
-                </p>
-                <p class="text-white-50">
-                    My toolkit includes modern standards like HTML5, CSS3/Sass, Bootstrap, and advanced JavaScript frameworks, ensuring every project is scalable, maintainable, and future-proof.
-                </p>
+            <h2 class="section-heading">My Services</h2>
+
+            <div class="row g-4 pt-3">
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="fa-solid fa-code"></i>
+                        <h4 class="fw-bold">Frontend Development</h4>
+                        <p>High-quality, pixel-perfect, responsive frontend websites using modern frameworks.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="fa-solid fa-gears"></i>
+                        <h4 class="fw-bold">Backend Development</h4>
+                        <p>Secure backend APIs, databases, authentication, and scalable server applications.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="fa-solid fa-brain"></i>
+                        <h4 class="fw-bold">UI/UX Designing</h4>
+                        <p>Attractive, smooth & modern UI with enhanced user experience and animations.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="text-center">
+    <!-- ========================= ABOUT ========================= -->
+    <section id="about">
+        <div class="container text-center">
+            <h2 class="section-heading">About Me</h2>
+            <p class="mt-3">
+                I am a passionate full-stack developer specializing in modern, fast and responsive designs.
+                I love creating clean UI, smooth animations and meaningful digital experiences.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================= CONTACT ========================= -->
+    <section id="contact" class="py-5 text-center">
         <div class="container">
-            <h2 class="section-heading">Get In Touch</h2>
-            <div class="contact-info mt-5">
-                <p class="text-white"><i class="fa-solid fa-envelope"></i> yourmail@elite.com</p>
-                <a href="mailto:yourmail@elite.com" class="glow-btn">Email Me Now</a>
-            </div>
+            <h2 class="section-heading">Contact</h2>
+
+            <p class="contact-info"><i class="fa-solid fa-envelope"></i> developer@gmail.com</p>
+            <p class="contact-info"><i class="fa-solid fa-phone"></i> +92 311 1234567</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Elite Digital Solutions | Crafted with Precision</p>
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="text-center">
+        <p>© 2024 Premium Portfolio. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        console.log("Elite Digital Website Loaded Successfully!");
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
