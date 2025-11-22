@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upwork-ready Profile — Frontend Developer</title>
+  <meta name="description" content="Frontend Developer | UI/UX Designer | React & Next.js Specialist — Upwork-ready profile page with copy-to-clipboard." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7fbff;--card:#ffffff;--text:#233044;--muted:#6b7280;--accent:#365f9a;--soft:#e9f1fb;--radius:12px;--shadow:0 8px 24px rgba(35,48,68,0.06);
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:980px;margin:36px auto;padding:24px}
+    .profile{display:flex;gap:20px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:14px;overflow:hidden;flex:0 0 120px;border:4px solid var(--soft);box-shadow:0 0 0 3px rgba(54,95,154,0.06)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .head-info h1{margin:0;font-size:1.7rem;color:var(--accent)}
+    .head-info p{margin:6px 0;color:var(--muted);font-weight:500}
+    .badges{display:flex;gap:8px;margin-top:10px}
+    .badge{background:var(--card);padding:8px 12px;border-radius:8px;border:1px solid var(--soft);font-weight:600;color:var(--accent);font-size:0.9rem}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:22px;margin-top:20px;box-shadow:var(--shadow);border:1px solid #eef4fb}
+    .card h2{margin:0 0 12px 0;font-size:1.1rem}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{background:var(--soft);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--accent);font-size:0.9rem}
+
+    .exp{margin-top:8px}
+    .exp-item{padding:12px;border-left:3px solid var(--soft);margin-bottom:12px}
+    .exp-item h3{margin:0;font-size:1rem;color:var(--accent)}
+    .exp-item span{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:8px}
+    .contact p{margin:6px 0;color:var(--text);font-weight:500}
+    .contact span{color:var(--muted);font-weight:400}
+
+    .actions{display:flex;gap:12px;margin-top:16px}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:none;font-weight:600;cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--soft)}
+
+    pre{background:#fbfdff;border-radius:8px;padding:12px;overflow:auto;font-family:monospace;font-size:0.92rem}
+
+    @media (max-width:720px){.profile{flex-direction:column;align-items:flex-start}.avatar{width:96px;height:96px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="profile">
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=60" alt="Profile"></div>
+      <div class="head-info">
+        <h1>Frontend Developer | UI/UX Designer | React & Next.js Specialist</h1>
+        <p>Detail-oriented developer building fast, accessible, and beautiful interfaces.</p>
+        <div class="badges">
+          <div class="badge">HTML5</div>
+          <div class="badge">CSS3</div>
+          <div class="badge">React</div>
+          <div class="badge">Figma</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="about">
+      <h2 id="about">Overview</h2>
+      <p>I’m a detail-oriented and creative Frontend Developer with a passion for building clean, user-focused digital experiences. I transform ideas into high-quality interfaces that are fast, modern, and visually appealing. I handle design-to-code workflows, component-driven systems, and accessible UI implementations.</p>
+      <div class="actions">
+        <button class="btn" id="copyProfile">Copy Upwork Profile</button>
+        <button class="btn secondary" id="downloadHtml">Download HTML</button>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="skills">
+      <h2 id="skills">Core Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3 / SASS</div>
+        <div class="skill">JavaScript (ES6+)</div>
+        <div class="skill">React / Next.js</div>
+        <div class="skill">UI/UX Design</div>
+        <div class="skill">Figma / Sketch</div>
+        <div class="skill">Node.js / REST APIs</div>
+        <div class="skill">Git / Version Control</div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="experience">
+      <h2 id="experience">Professional Experience</h2>
+      <div class="exp">
+        <div class="exp-item">
+          <h3>Senior Frontend Developer — Elite Digital Solutions</h3>
+          <span>January 2022 — Present</span>
+          <p>Led the frontend development of a company-wide dashboard; improved performance, implemented reusable component library, and collaborated cross-functionally to deliver high-impact features.</p>
+        </div>
+
+        <div class="exp-item">
+          <h3>UI/UX Designer — Freelance Consultancy</h3>
+          <span>June 2020 — December 2021</span>
+          <p>Delivered design strategy, pixel-perfect prototypes and user-tested flows to improve product usability and conversion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card contact" aria-labelledby="contact">
+      <h2 id="contact">Contact & Info</h2>
+      <p>Email: <span>youremail@example.com</span></p>
+      <p>Location: <span>Remote / Your City, Country</span></p>
+      <p>LinkedIn: <span>your-linkedin</span></p>
+      <p>GitHub: <span>your-github</span></p>
+    </section>
+
+    <section class="card">
+      <h2>Preview: Text to paste into Upwork</h2>
+      <pre id="upworkText" tabindex="0">Title: Frontend Developer | UI/UX Designer | React & Next.js Specialist
+
+Overview:
+I’m a detail-oriented and creative Frontend Developer with a passion for building clean, user-focused digital experiences. I transform ideas into high-quality interfaces that are fast, modern, and visually appealing. I handle design-to-code workflows, component-driven systems, and accessible UI implementations.
+
+Core Skills:
+- HTML5
+- CSS3 / SASS
+- JavaScript (ES6+)
+- React / Next.js
+- UI/UX Design
+- Figma / Sketch
+- Node.js / REST APIs
+- Git / Version Control
+
+Experience:
+Senior Frontend Developer — Elite Digital Solutions (Jan 2022 — Present)
+- Led development of a company-wide dashboard; improved performance and built reusable component library.
+
+UI/UX Designer — Freelance Consultancy (Jun 2020 — Dec 2021)
+- Delivered design strategy, prototypes, and user-tested flows to improve usability.
+
+Contact:
+Email: youremail@example.com
+Location: Remote / Your City, Country
+LinkedIn: your-linkedin
+GitHub: your-github
+</pre>
+    </section>
+
+    <footer style="text-align:center;margin-top:18px;color:var(--muted)">© 2025 — Upwork-ready profile</footer>
+  </main>
+
+  <script>
+    // Build the plain-text profile for copying
+    const profileText = document.getElementById('upworkText').innerText.trim();
+    document.getElementById('copyProfile').addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(profileText);
+        alert('Profile text copied to clipboard — paste into your Upwork profile.');
+      }catch(e){
+        // fallback
+        const ta = document.createElement('textarea');ta.value = profileText;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+        alert('Profile text copied (fallback).');
+      }
+    });
+
+    // Download HTML file
+    document.getElementById('downloadHtml').addEventListener('click', () => {
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');a.href = url;a.download = 'upwork_profile.html';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
