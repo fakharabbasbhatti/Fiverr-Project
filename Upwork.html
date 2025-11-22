@@ -6,6 +6,7 @@
   <title>Upwork-ready Profile — Frontend Developer</title>
   <meta name="description" content="Frontend Developer | UI/UX Designer | React & Next.js Specialist — Upwork-ready profile page with copy-to-clipboard." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#fff7fc; /* soft pink background */
@@ -17,46 +18,198 @@
       --radius:14px;
       --shadow:0 8px 24px rgba(255,111,184,0.12);
     }
-    *{box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;transition:0.3s}
-    .wrap{max-width:980px;margin:36px auto;padding:24px}
-    .profile{display:flex;gap:20px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:20px;overflow:hidden;flex:0 0 120px;border:4px solid var(--soft);box-shadow:0 0 0 4px rgba(255,111,184,0.15)}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .head-info h1{margin:0;font-size:1.9rem;color:var(--accent);font-weight:700}
-    .head-info p{margin:6px 0;color:var(--muted);font-weight:500}
-    .badges{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
-    .badge{background:var(--soft);padding:8px 14px;border-radius:999px;border:1px solid var(--accent);font-weight:600;color:var(--accent);font-size:0.9rem;box-shadow:var(--shadow)}
 
-    .card{background:var(--card);border-radius:var(--radius);padding:24px;margin-top:20px;box-shadow:var(--shadow);border:1px solid var(--soft)}
-    .card h2{margin:0 0 12px 0;font-size:1.2rem;color:var(--accent)}
-    .skills{display:flex;flex-wrap:wrap;gap:12px}
-    .skill{background:var(--soft);padding:8px 14px;border-radius:12px;font-weight:600;color:var(--accent);font-size:0.9rem;box-shadow:var(--shadow)}
+    *{box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      transition:0.3s;
+    }
 
-    .exp{margin-top:8px}
-    .exp-item{padding:14px;border-left:4px solid var(--accent);margin-bottom:14px;border-radius:8px;background:#fff0fa}
-    .exp-item h3{margin:0;font-size:1rem;color:var(--accent);font-weight:600}
-    .exp-item span{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:8px}
-    .contact p{margin:6px 0;color:var(--text);font-weight:500}
-    .contact span{color:var(--muted);font-weight:400}
+    .wrap{
+      max-width:980px;
+      margin:36px auto;
+      padding:24px;
+    }
 
-    .actions{display:flex;gap:12px;margin-top:16px}
-    .btn{background:var(--accent);color:white;padding:10px 16px;border-radius:10px;border:none;font-weight:600;cursor:pointer;box-shadow:var(--shadow);transition:0.2s}
-    .btn:hover{opacity:0.85}
-    .btn.secondary{background:white;color:var(--accent);border:2px solid var(--accent)}
+    .profile{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
 
-    pre{background:#fff0fa;border-radius:10px;padding:14px;overflow:auto;font-family:monospace;font-size:0.92rem;border:1px solid var(--soft)}
+    .avatar{
+      width:120px;
+      height:120px;
+      border-radius:20px;
+      overflow:hidden;
+      flex:0 0 120px;
+      border:4px solid var(--soft);
+      box-shadow:0 0 0 4px rgba(255,111,184,0.15);
+    }
 
-    @media (max-width:720px){.profile{flex-direction:column;align-items:flex-start}.avatar{width:96px;height:96px}}
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .head-info h1{
+      margin:0;
+      font-size:1.9rem;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    .head-info p{
+      margin:6px 0;
+      color:var(--muted);
+      font-weight:500;
+    }
+
+    .badges{
+      display:flex;
+      gap:10px;
+      margin-top:10px;
+      flex-wrap:wrap;
+    }
+
+    .badge{
+      background:var(--soft);
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--accent);
+      font-weight:600;
+      color:var(--accent);
+      font-size:0.9rem;
+      box-shadow:var(--shadow);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:24px;
+      margin-top:20px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--soft);
+    }
+
+    .card h2{
+      margin:0 0 12px 0;
+      font-size:1.2rem;
+      color:var(--accent);
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .skill{
+      background:var(--soft);
+      padding:8px 14px;
+      border-radius:12px;
+      font-weight:600;
+      color:var(--accent);
+      font-size:0.9rem;
+      box-shadow:var(--shadow);
+    }
+
+    .exp{
+      margin-top:8px;
+    }
+
+    .exp-item{
+      padding:14px;
+      border-left:4px solid var(--accent);
+      margin-bottom:14px;
+      border-radius:8px;
+      background:#fff0fa;
+    }
+
+    .exp-item h3{
+      margin:0;
+      font-size:1rem;
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    .exp-item span{
+      display:block;
+      color:var(--muted);
+      font-size:0.9rem;
+      margin-bottom:8px;
+    }
+
+    .contact p{margin:6px 0;color:var(--text);font-weight:500;}
+    .contact span{color:var(--muted);font-weight:400;}
+
+    .actions{
+      display:flex;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .btn{
+      background:var(--accent);
+      color:white;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      transition:0.2s;
+    }
+
+    .btn:hover{opacity:0.85;}
+    .btn.secondary{
+      background:white;
+      color:var(--accent);
+      border:2px solid var(--accent);
+    }
+
+    pre{
+      background:#fff0fa;
+      border-radius:10px;
+      padding:14px;
+      overflow:auto;
+      font-family:monospace;
+      font-size:0.92rem;
+      border:1px solid var(--soft);
+    }
+
+    @media (max-width:720px){
+      .profile{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .avatar{
+        width:96px;
+        height:96px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="wrap">
+    
+    <!-- Profile Section -->
     <section class="profile">
-      <div class="avatar"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=60" alt="Profile"></div>
+      <div class="avatar">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=60" alt="Profile">
+      </div>
+
       <div class="head-info">
         <h1>Frontend Developer | UI/UX Designer | React & Next.js Specialist</h1>
         <p>Detail-oriented developer building fast, accessible, and beautiful interfaces.</p>
+
         <div class="badges">
           <div class="badge">HTML5</div>
           <div class="badge">CSS3</div>
@@ -66,17 +219,20 @@
       </div>
     </section>
 
-    <section class="card" aria-labelledby="about">
-      <h2 id="about">Overview</h2>
+    <!-- Overview Section -->
+    <section class="card">
+      <h2>Overview</h2>
       <p>I’m a detail-oriented and creative Frontend Developer with a passion for building clean, user-focused digital experiences. I transform ideas into high-quality interfaces that are fast, modern, and visually appealing. I handle design-to-code workflows, component-driven systems, and accessible UI implementations.</p>
+
       <div class="actions">
         <button class="btn" id="copyProfile">Copy Upwork Profile</button>
         <button class="btn secondary" id="downloadHtml">Download HTML</button>
       </div>
     </section>
 
-    <section class="card" aria-labelledby="skills">
-      <h2 id="skills">Core Skills</h2>
+    <!-- Skills Section -->
+    <section class="card">
+      <h2>Core Skills</h2>
       <div class="skills">
         <div class="skill">HTML5</div>
         <div class="skill">CSS3 / SASS</div>
@@ -89,9 +245,11 @@
       </div>
     </section>
 
-    <section class="card" aria-labelledby="experience">
-      <h2 id="experience">Professional Experience</h2>
+    <!-- Experience Section -->
+    <section class="card">
+      <h2>Professional Experience</h2>
       <div class="exp">
+
         <div class="exp-item">
           <h3>Senior Frontend Developer — Elite Digital Solutions</h3>
           <span>January 2022 — Present</span>
@@ -103,23 +261,27 @@
           <span>June 2020 — December 2021</span>
           <p>Delivered design strategy, pixel-perfect prototypes and user-tested flows to improve product usability and conversion.</p>
         </div>
+
       </div>
     </section>
 
-    <section class="card contact" aria-labelledby="contact">
-      <h2 id="contact">Contact & Info</h2>
+    <!-- Contact Section -->
+    <section class="card contact">
+      <h2>Contact & Info</h2>
       <p>Email: <span>youremail@example.com</span></p>
       <p>Location: <span>Remote / Your City, Country</span></p>
       <p>LinkedIn: <span>your-linkedin</span></p>
       <p>GitHub: <span>your-github</span></p>
     </section>
 
+    <!-- Upwork Preview -->
     <section class="card">
       <h2>Preview: Text to paste into Upwork</h2>
-      <pre id="upworkText" tabindex="0">Title: Frontend Developer | UI/UX Designer | React & Next.js Specialist
+      <pre id="upworkText">
+Title: Frontend Developer | UI/UX Designer | React & Next.js Specialist
 
 Overview:
-I’m a detail-oriented and creative Frontend Developer with a passion for building clean, user-focused digital experiences. I transform ideas into high-quality interfaces that are fast, modern, and visually appealing. I handle design-to-code workflows, component-driven systems, and accessible UI implementations.
+I’m a detail-oriented and creative Frontend Developer with a passion for building clean, user-focused digital experiences...
 
 Core Skills:
 - HTML5
@@ -133,42 +295,55 @@ Core Skills:
 
 Experience:
 Senior Frontend Developer — Elite Digital Solutions (Jan 2022 — Present)
-- Led development of a company-wide dashboard; improved performance and built reusable component library.
+- Led development of a company-wide dashboard...
 
 UI/UX Designer — Freelance Consultancy (Jun 2020 — Dec 2021)
-- Delivered design strategy, prototypes, and user-tested flows to improve usability.
+- Delivered design strategy and user-tested flows...
 
 Contact:
 Email: youremail@example.com
 Location: Remote / Your City, Country
 LinkedIn: your-linkedin
 GitHub: your-github
-</pre>
+      </pre>
     </section>
 
-    <footer style="text-align:center;margin-top:18px;color:var(--muted)">© 2025 — Upwork-ready profile</footer>
+    <footer style="text-align:center;margin-top:18px;color:var(--muted)">
+      © 2025 — Upwork-ready profile
+    </footer>
   </main>
 
+  <!-- JavaScript for Copy + Download -->
   <script>
-    // Build the plain-text profile for copying
     const profileText = document.getElementById('upworkText').innerText.trim();
+
     document.getElementById('copyProfile').addEventListener('click', async () => {
       try{
         await navigator.clipboard.writeText(profileText);
         alert('Profile text copied to clipboard — paste into your Upwork profile.');
       }catch(e){
-        // fallback
-        const ta = document.createElement('textarea');ta.value = profileText;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+        const ta = document.createElement('textarea');
+        ta.value = profileText;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
         alert('Profile text copied (fallback).');
       }
     });
 
-    // Download HTML file
     document.getElementById('downloadHtml').addEventListener('click', () => {
       const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');a.href = url;a.download = 'upwork_profile.html';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'upwork_profile.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
     });
   </script>
+
 </body>
 </html>
