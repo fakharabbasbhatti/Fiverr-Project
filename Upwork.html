@@ -8,36 +8,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f7fbff;--card:#ffffff;--text:#233044;--muted:#6b7280;--accent:#365f9a;--soft:#e9f1fb;--radius:12px;--shadow:0 8px 24px rgba(35,48,68,0.06);
+      --bg:#fff7fc; /* soft pink background */
+      --card:#ffffff;
+      --text:#3a2f4d;
+      --muted:#8a7b99;
+      --accent:#ff6fb8; /* cute pink */
+      --soft:#ffe1f2; /* lighter pink */
+      --radius:14px;
+      --shadow:0 8px 24px rgba(255,111,184,0.12);
     }
     *{box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;transition:0.3s}
     .wrap{max-width:980px;margin:36px auto;padding:24px}
     .profile{display:flex;gap:20px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:14px;overflow:hidden;flex:0 0 120px;border:4px solid var(--soft);box-shadow:0 0 0 3px rgba(54,95,154,0.06)}
+    .avatar{width:120px;height:120px;border-radius:20px;overflow:hidden;flex:0 0 120px;border:4px solid var(--soft);box-shadow:0 0 0 4px rgba(255,111,184,0.15)}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .head-info h1{margin:0;font-size:1.7rem;color:var(--accent)}
+    .head-info h1{margin:0;font-size:1.9rem;color:var(--accent);font-weight:700}
     .head-info p{margin:6px 0;color:var(--muted);font-weight:500}
-    .badges{display:flex;gap:8px;margin-top:10px}
-    .badge{background:var(--card);padding:8px 12px;border-radius:8px;border:1px solid var(--soft);font-weight:600;color:var(--accent);font-size:0.9rem}
+    .badges{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+    .badge{background:var(--soft);padding:8px 14px;border-radius:999px;border:1px solid var(--accent);font-weight:600;color:var(--accent);font-size:0.9rem;box-shadow:var(--shadow)}
 
-    .card{background:var(--card);border-radius:var(--radius);padding:22px;margin-top:20px;box-shadow:var(--shadow);border:1px solid #eef4fb}
-    .card h2{margin:0 0 12px 0;font-size:1.1rem}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{background:var(--soft);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--accent);font-size:0.9rem}
+    .card{background:var(--card);border-radius:var(--radius);padding:24px;margin-top:20px;box-shadow:var(--shadow);border:1px solid var(--soft)}
+    .card h2{margin:0 0 12px 0;font-size:1.2rem;color:var(--accent)}
+    .skills{display:flex;flex-wrap:wrap;gap:12px}
+    .skill{background:var(--soft);padding:8px 14px;border-radius:12px;font-weight:600;color:var(--accent);font-size:0.9rem;box-shadow:var(--shadow)}
 
     .exp{margin-top:8px}
-    .exp-item{padding:12px;border-left:3px solid var(--soft);margin-bottom:12px}
-    .exp-item h3{margin:0;font-size:1rem;color:var(--accent)}
+    .exp-item{padding:14px;border-left:4px solid var(--accent);margin-bottom:14px;border-radius:8px;background:#fff0fa}
+    .exp-item h3{margin:0;font-size:1rem;color:var(--accent);font-weight:600}
     .exp-item span{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:8px}
     .contact p{margin:6px 0;color:var(--text);font-weight:500}
     .contact span{color:var(--muted);font-weight:400}
 
     .actions{display:flex;gap:12px;margin-top:16px}
-    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:none;font-weight:600;cursor:pointer}
-    .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--soft)}
+    .btn{background:var(--accent);color:white;padding:10px 16px;border-radius:10px;border:none;font-weight:600;cursor:pointer;box-shadow:var(--shadow);transition:0.2s}
+    .btn:hover{opacity:0.85}
+    .btn.secondary{background:white;color:var(--accent);border:2px solid var(--accent)}
 
-    pre{background:#fbfdff;border-radius:8px;padding:12px;overflow:auto;font-family:monospace;font-size:0.92rem}
+    pre{background:#fff0fa;border-radius:10px;padding:14px;overflow:auto;font-family:monospace;font-size:0.92rem;border:1px solid var(--soft)}
 
     @media (max-width:720px){.profile{flex-direction:column;align-items:flex-start}.avatar{width:96px;height:96px}}
   </style>
